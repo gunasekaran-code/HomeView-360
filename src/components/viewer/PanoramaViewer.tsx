@@ -106,6 +106,10 @@ function hotspotMarkers(scene: Scene, lang: Lang, onNavigate: (target: SceneId) 
     // jumps rooms by accident.
     let down: { x: number; y: number } | null = null;
     el.addEventListener("pointerdown", (e) => (down = { x: e.clientX, y: e.clientY }));
+    // PSV calls preventDefault() on every touchend after a touchstart it saw,
+    // which stops mobile browsers from ever firing the click below. Keep the
+    // touch away from PSV so the tap reaches the button.
+    el.addEventListener("touchstart", (e) => e.stopPropagation(), { passive: true });
     el.addEventListener("click", (e) => {
       e.stopPropagation();
       const moved = down && e.detail > 0 ? Math.hypot(e.clientX - down.x, e.clientY - down.y) : 0;
