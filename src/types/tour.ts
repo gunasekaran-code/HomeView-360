@@ -20,9 +20,7 @@ export interface Hotspot {
 }
 
 export interface PanoramaSources {
-  /** 8192x4096 equirectangular for high-DPI desktops */
-  ultra: string;
-  /** 6144x3072 equirectangular */
+  /** Native-resolution (5888x2944) equirectangular */
   full: string;
   /** 4096x2048 equirectangular for mobile GPUs */
   medium: string;
@@ -62,7 +60,7 @@ export interface Scene {
    */
   dimensions?: string;
   panorama: PanoramaSources;
-  /** Source capture the panorama was stitched from. */
+  /** Stitched Insta360 export the panorama was built from (assets/jpg assets). */
   source: string;
   initialView: ViewAngle;
   hotspots: Hotspot[];

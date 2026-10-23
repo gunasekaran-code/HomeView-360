@@ -38,15 +38,12 @@ const deg = (r: number) => (r * 180) / Math.PI;
 
 /**
  * Resolution tiers (GPU memory with mipmaps ≈ width × height × 5.3 bytes):
- * phones → 4K, tablets / standard desktops → 6K, high-DPI desktops → 8K.
+ * phones and GPUs without 8K textures → 4K, everything else → native resolution.
  */
 function pickSource(scene: Scene) {
   const maxTex = maxTextureSize();
   const shortSide = Math.min(window.screen.width, window.screen.height);
-  const coarse = window.matchMedia("(pointer: coarse)").matches;
-  if (shortSide < 600 || maxTex < 8192) return scene.panorama.medium;
-  if (coarse) return scene.panorama.full;
-  return maxTex >= 16384 && window.devicePixelRatio >= 1.5 ? scene.panorama.ultra : scene.panorama.full;
+  return shortSide < 600 || maxTex < 8192 ? scene.panorama.medium : scene.panorama.full;
 }
 
 /**

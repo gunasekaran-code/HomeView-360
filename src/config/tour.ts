@@ -3,9 +3,9 @@ import type { PropertyInfo, Scene, SceneId } from "@/types/tour";
 /**
  * Central tour configuration.
  *
- * Panoramas are stitched from the Insta360 X5 captures in /assets by
- * scripts/panorama/build_panoramas.py. Hotspot angles were read off the
- * stitched images at the actual doorways:
+ * Panoramas are built from the Insta360 X5 stitched 360° exports in
+ * "assets/jpg assets" by scripts/panorama/build_panoramas.py. Hotspot angles
+ * were read off the stitched images at the actual doorways:
  *  - living room ↔ kitchen: open doorway beside the green feature wall
  *    (visible from both sides).
  *  - living room ↔ bedroom: maroon-curtained doorway (same curtain fabric
@@ -15,7 +15,6 @@ import type { PropertyInfo, Scene, SceneId } from "@/types/tour";
  */
 
 const pano = (id: SceneId) => ({
-  ultra: `/panoramas/${id}-8k.jpg`,
   full: `/panoramas/${id}.jpg`,
   medium: `/panoramas/${id}-4k.jpg`,
   preview: `/panoramas/${id}-preview.jpg`,
@@ -63,7 +62,7 @@ export const scenes: Scene[] = [
       ],
     },
     panorama: pano("living-room"),
-    source: "IMG_20261021_201713_00_278.insp",
+    source: "IMG_5702.JPG.jpeg",
     initialView: { yaw: -3.7, pitch: -5 },
     hotspots: [
       { id: "living-to-kitchen", target: "kitchen", position: { yaw: 77, pitch: -4 } },
@@ -97,7 +96,7 @@ export const scenes: Scene[] = [
       ],
     },
     panorama: pano("kitchen"),
-    source: "IMG_20261021_201940_00_279.insp",
+    source: "IMG_5703.JPG.jpeg",
     initialView: { yaw: 1, pitch: -2 },
     hotspots: [{ id: "kitchen-to-living", target: "living-room", position: { yaw: 83, pitch: -4 } }],
     floorPlan: { x: 100, y: 0, w: 78, h: 85, camera: { x: 139, y: 27 }, northOffset: 176 },
@@ -126,7 +125,7 @@ export const scenes: Scene[] = [
       ],
     },
     panorama: pano("bedroom"),
-    source: "IMG_20261021_202026_00_280.insp",
+    source: "IMG_5705.JPG.jpeg",
     initialView: { yaw: -5.6, pitch: -1 },
     hotspots: [{ id: "bedroom-to-living", target: "living-room", position: { yaw: -54, pitch: -2 } }],
     floorPlan: { x: 45, y: -72, w: 95, h: 72, camera: { x: 95, y: -35 }, northOffset: 263 },
