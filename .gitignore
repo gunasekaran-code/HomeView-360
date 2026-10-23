@@ -45,3 +45,11 @@ next-env.d.ts
 .venv-pano/
 __pycache__/
 .venv-tts/
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example

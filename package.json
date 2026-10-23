@@ -10,9 +10,14 @@
     "typecheck": "tsc --noEmit",
     "narration:render": "node --experimental-strip-types --no-warnings scripts/narration/render.mts",
     "panoramas:build": ".venv-pano/bin/python scripts/panorama/build_panoramas.py",
-    "music:generate": ".venv-pano/bin/python scripts/music/generate_ambient.py"
+    "music:generate": ".venv-pano/bin/python scripts/music/generate_ambient.py",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "~1.20.13",
     "@photo-sphere-viewer/autorotate-plugin": "~5.15.1",
     "@photo-sphere-viewer/core": "~5.15.1",
     "@photo-sphere-viewer/markers-plugin": "~5.15.1",
@@ -33,6 +38,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "~4.152.0"
   }
 }
