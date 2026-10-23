@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-lexend), var(--font-tamil), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-michroma), var(--font-tamil), var(--font-lexend), sans-serif;
+  --font-tamil: var(--font-tamil);
+  --color-brand-300: #9cc4ff;
+  --color-brand-400: #6aa8ff;
+  --color-brand-500: #4f8cff;
+  --color-brand-600: #3a6ff0;
+  --color-brand-700: #2a55c8;
+  --color-violet-glow: #7c5cff;
+  --color-cyan-glow: #2fd4ff;
+  --color-whatsapp: #25d366;
+  --animate-fade-in: fade-in 0.35s ease-out both;
+  --animate-pop-in: pop-in 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+  --animate-rise-in: rise-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-sheet-in: sheet-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-ken-burns: ken-burns 28s ease-in-out infinite alternate;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translateX(-8px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes sheet-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes ken-burns {
+  from { transform: scale(1.15) translateX(-3%); }
+  to { transform: scale(1.25) translateX(3%); }
+}
+@keyframes hotspot-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(255 255 255 / 0.6); }
+  70% { box-shadow: 0 0 0 16px rgb(255 255 255 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(255 255 255 / 0); }
+}
+@keyframes speaking {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+:root {
+  color-scheme: dark;
+  --grad-accent: linear-gradient(135deg, #7c5cff 0%, #3a8dff 55%, #2fd4ff 100%);
+  --glass-bg: rgb(16 20 30 / 0.42);
+  --glass-bg-strong: rgb(14 18 28 / 0.62);
+  --glass-border: rgb(255 255 255 / 0.18);
+  --glass-sheen: linear-gradient(140deg, rgb(255 255 255 / 0.16) 0%, rgb(255 255 255 / 0.04) 45%, rgb(255 255 255 / 0) 100%);
+  --glass-shadow: 0 10px 40px -8px rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.22);
+}
+
+html,
+body {
+  height: 100%;
+  background: #07090d;
+  color: #fff;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Photo Sphere Viewer overrides ----------
+   PSV's stylesheet is imported after this file, so selectors are doubled to
+   win on specificity (its default background is a white radial gradient). */
+.psv-container.psv-container {
+  background: #07090d;
+  cursor: grab;
+}
+.psv-container.psv-container:active {
+  cursor: grabbing;
+}
+.psv-loader-container.psv-loader-container {
+  display: none;
+}
+
+/* ---------- Glass system ---------- */
+@layer components {
+  .glass {
+    background-color: var(--glass-bg);
+    background-image: var(--glass-sheen);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    color: #fff;
+    backdrop-filter: blur(22px) saturate(165%);
+    -webkit-backdrop-filter: blur(22px) saturate(165%);
+  }
+  .glass-strong {
+    background-color: var(--glass-bg-strong);
+    background-image: var(--glass-sheen);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    color: #fff;
+    backdrop-filter: blur(28px) saturate(170%);
+    -webkit-backdrop-filter: blur(28px) saturate(170%);
+  }
+  /* Inner tiles inside a glass panel */
+  .glass-tile {
+    background: rgb(255 255 255 / 0.07);
+    border: 1px solid rgb(255 255 255 / 0.1);
+  }
+  .glass-hover {
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .glass-hover:hover {
+    background-color: rgb(255 255 255 / 0.12);
+  }
+  .accent-gradient {
+    background-image: var(--grad-accent);
+  }
+  .accent-text {
+    background-image: var(--grad-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Gradient hairline border: put on an element with a glass background. */
+  .accent-ring {
+    position: relative;
+  }
+  .accent-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: var(--grad-accent);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .text-shadow {
+    text-shadow: 0 2px 18px rgb(0 0 0 / 0.55), 0 1px 3px rgb(0 0 0 / 0.5);
+  }
+  .icon-shadow {
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / 0.55));
+  }
+}
+
+/* ---------- Hotspots (reference: label pill above a ringed dot), frosted ---------- */
+.h360-hotspot {
+  position: relative;
+  animation: fade-in 0.5s ease-out both; /* hotspots appear softly after a room change */
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.h360-hotspot__dot {
+  /* PSV forces display:block on the marker element, so centre absolutely. */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #fff 0 9px, rgb(255 255 255 / 0.2) 10px 14px, transparent 15px);
+  border: 2px solid rgb(255 255 255 / 0.9);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: hotspot-pulse 2.2s infinite;
+  transition: transform 0.25s ease;
+}
+.h360-hotspot__label {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 150px;
+  padding: 9px 22px;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 0.82);
+  border: 1px solid rgb(255 255 255 / 0.9);
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 10px 30px -6px rgb(0 0 0 / 0.4);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.h360-hotspot:hover .h360-hotspot__dot,
+.h360-hotspot:focus-visible .h360-hotspot__dot {
+  transform: scale(1.18);
+}
+.h360-hotspot:hover .h360-hotspot__label,
+.h360-hotspot:focus-visible .h360-hotspot__label {
+  transform: translateX(-50%) translateY(-3px);
+  background: var(--grad-accent);
+  border-color: rgb(255 255 255 / 0.5);
+  color: #fff;
+}
+.h360-hotspot:focus-visible {
+  outline: none;
+}
+/* Desktop (mouse / trackpad): labels stay hidden until the cursor comes near.
+   Touch devices cannot hover, so they always show the label. */
+@media (hover: hover) and (pointer: fine) {
+  .h360-hotspot::before {
+    content: "";
+    position: absolute;
+    inset: -40px; /* the "near" zone around the dot */
+    border-radius: 9999px;
+  }
+  .h360-hotspot__label {
+    opacity: 0;
+    transform: translateX(-50%) translateY(6px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  }
+  .h360-hotspot:hover .h360-hotspot__label,
+  .h360-hotspot:focus-visible .h360-hotspot__label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-3px) scale(1);
+  }
+}
+@media (max-width: 640px) {
+  .h360-hotspot__label {
+    min-width: 0;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 11px;
+  }
+}
+
+/* Letter-spacing splits Tamil glyph clusters apart; keep it for Latin only. */
+html[lang="ta"] [class*="tracking-"],
+html[lang="ta"] .h360-hotspot__label {
+  letter-spacing: normal;
+}
+
+/* ---------- Misc ---------- */
+.speaking-bar {
+  display: inline-block;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: currentColor;
+  animation: speaking 0.9s ease-in-out infinite;
+  transform-origin: bottom;
+}
+.speaking-bar:nth-child(2) { animation-delay: 0.15s; }
+.speaking-bar:nth-child(3) { animation-delay: 0.3s; }
+.speaking-bar:nth-child(4) { animation-delay: 0.45s; }
+
+.spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #7c5cff, #2fd4ff var(--fill, 50%), rgb(255 255 255 / 0.15) var(--fill, 50%));
+  outline: none;
+}
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgb(79 140 255 / 0.35), 0 2px 6px rgb(0 0 0 / 0.4);
+  cursor: pointer;
+}
+input[type="range"].slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgb(79 140 255 / 0.35);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h360-hotspot__dot,
+  .speaking-bar,
+  .spin-slow,
+  .animate-ken-burns {
+    animation: none;
+  }
+}

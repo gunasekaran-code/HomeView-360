@@ -1,0 +1,331 @@
+{
+  "engine": "edge-tts",
+  "characters": {
+    "pallavi": {
+      "ta": "ta-IN-PallaviNeural",
+      "en": "ta-IN-PallaviNeural"
+    },
+    "valluvar": {
+      "ta": "ta-IN-ValluvarNeural",
+      "en": "ta-IN-ValluvarNeural"
+    }
+  },
+  "tracks": {
+    "pallavi": {
+      "ta": {
+        "welcome": [
+          {
+            "src": "/audio/narration/pallavi/ta/welcome-0.mp3",
+            "duration": 7.81
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/welcome-1.mp3",
+            "duration": 7.79
+          }
+        ],
+        "living-room": [
+          {
+            "src": "/audio/narration/pallavi/ta/living-room-0.mp3",
+            "duration": 2.65
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/living-room-1.mp3",
+            "duration": 9.28
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/living-room-2.mp3",
+            "duration": 9.2
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/living-room-3.mp3",
+            "duration": 8.48
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/living-room-4.mp3",
+            "duration": 9.2
+          }
+        ],
+        "kitchen": [
+          {
+            "src": "/audio/narration/pallavi/ta/kitchen-0.mp3",
+            "duration": 3.56
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/kitchen-1.mp3",
+            "duration": 10
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/kitchen-2.mp3",
+            "duration": 10.04
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/kitchen-3.mp3",
+            "duration": 8.8
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/kitchen-4.mp3",
+            "duration": 4.55
+          }
+        ],
+        "bedroom": [
+          {
+            "src": "/audio/narration/pallavi/ta/bedroom-0.mp3",
+            "duration": 2.17
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/bedroom-1.mp3",
+            "duration": 8.68
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/bedroom-2.mp3",
+            "duration": 8.41
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/bedroom-3.mp3",
+            "duration": 5.17
+          },
+          {
+            "src": "/audio/narration/pallavi/ta/bedroom-4.mp3",
+            "duration": 5.1
+          }
+        ]
+      },
+      "en": {
+        "welcome": [
+          {
+            "src": "/audio/narration/pallavi/en/welcome-0.mp3",
+            "duration": 3.92
+          },
+          {
+            "src": "/audio/narration/pallavi/en/welcome-1.mp3",
+            "duration": 6.54
+          }
+        ],
+        "living-room": [
+          {
+            "src": "/audio/narration/pallavi/en/living-room-0.mp3",
+            "duration": 2.17
+          },
+          {
+            "src": "/audio/narration/pallavi/en/living-room-1.mp3",
+            "duration": 6.52
+          },
+          {
+            "src": "/audio/narration/pallavi/en/living-room-2.mp3",
+            "duration": 7.6
+          },
+          {
+            "src": "/audio/narration/pallavi/en/living-room-3.mp3",
+            "duration": 6.18
+          },
+          {
+            "src": "/audio/narration/pallavi/en/living-room-4.mp3",
+            "duration": 6.92
+          }
+        ],
+        "kitchen": [
+          {
+            "src": "/audio/narration/pallavi/en/kitchen-0.mp3",
+            "duration": 2.89
+          },
+          {
+            "src": "/audio/narration/pallavi/en/kitchen-1.mp3",
+            "duration": 7.67
+          },
+          {
+            "src": "/audio/narration/pallavi/en/kitchen-2.mp3",
+            "duration": 7.86
+          },
+          {
+            "src": "/audio/narration/pallavi/en/kitchen-3.mp3",
+            "duration": 7.14
+          },
+          {
+            "src": "/audio/narration/pallavi/en/kitchen-4.mp3",
+            "duration": 3.97
+          }
+        ],
+        "bedroom": [
+          {
+            "src": "/audio/narration/pallavi/en/bedroom-0.mp3",
+            "duration": 2.17
+          },
+          {
+            "src": "/audio/narration/pallavi/en/bedroom-1.mp3",
+            "duration": 6.59
+          },
+          {
+            "src": "/audio/narration/pallavi/en/bedroom-2.mp3",
+            "duration": 5.34
+          },
+          {
+            "src": "/audio/narration/pallavi/en/bedroom-3.mp3",
+            "duration": 4.43
+          },
+          {
+            "src": "/audio/narration/pallavi/en/bedroom-4.mp3",
+            "duration": 3.92
+          }
+        ]
+      }
+    },
+    "valluvar": {
+      "ta": {
+        "welcome": [
+          {
+            "src": "/audio/narration/valluvar/ta/welcome-0.mp3",
+            "duration": 7.57
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/welcome-1.mp3",
+            "duration": 7.74
+          }
+        ],
+        "living-room": [
+          {
+            "src": "/audio/narration/valluvar/ta/living-room-0.mp3",
+            "duration": 2.77
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/living-room-1.mp3",
+            "duration": 9.16
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/living-room-2.mp3",
+            "duration": 9.28
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/living-room-3.mp3",
+            "duration": 8.15
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/living-room-4.mp3",
+            "duration": 8.99
+          }
+        ],
+        "kitchen": [
+          {
+            "src": "/audio/narration/valluvar/ta/kitchen-0.mp3",
+            "duration": 3.61
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/kitchen-1.mp3",
+            "duration": 9.71
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/kitchen-2.mp3",
+            "duration": 10.04
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/kitchen-3.mp3",
+            "duration": 8.94
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/kitchen-4.mp3",
+            "duration": 4.67
+          }
+        ],
+        "bedroom": [
+          {
+            "src": "/audio/narration/valluvar/ta/bedroom-0.mp3",
+            "duration": 2.17
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/bedroom-1.mp3",
+            "duration": 8.96
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/bedroom-2.mp3",
+            "duration": 8.39
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/bedroom-3.mp3",
+            "duration": 5.15
+          },
+          {
+            "src": "/audio/narration/valluvar/ta/bedroom-4.mp3",
+            "duration": 5.15
+          }
+        ]
+      },
+      "en": {
+        "welcome": [
+          {
+            "src": "/audio/narration/valluvar/en/welcome-0.mp3",
+            "duration": 3.56
+          },
+          {
+            "src": "/audio/narration/valluvar/en/welcome-1.mp3",
+            "duration": 6.08
+          }
+        ],
+        "living-room": [
+          {
+            "src": "/audio/narration/valluvar/en/living-room-0.mp3",
+            "duration": 2.17
+          },
+          {
+            "src": "/audio/narration/valluvar/en/living-room-1.mp3",
+            "duration": 6.35
+          },
+          {
+            "src": "/audio/narration/valluvar/en/living-room-2.mp3",
+            "duration": 7.24
+          },
+          {
+            "src": "/audio/narration/valluvar/en/living-room-3.mp3",
+            "duration": 6.18
+          },
+          {
+            "src": "/audio/narration/valluvar/en/living-room-4.mp3",
+            "duration": 6.59
+          }
+        ],
+        "kitchen": [
+          {
+            "src": "/audio/narration/valluvar/en/kitchen-0.mp3",
+            "duration": 3.01
+          },
+          {
+            "src": "/audio/narration/valluvar/en/kitchen-1.mp3",
+            "duration": 7.21
+          },
+          {
+            "src": "/audio/narration/valluvar/en/kitchen-2.mp3",
+            "duration": 7.6
+          },
+          {
+            "src": "/audio/narration/valluvar/en/kitchen-3.mp3",
+            "duration": 7.64
+          },
+          {
+            "src": "/audio/narration/valluvar/en/kitchen-4.mp3",
+            "duration": 3.64
+          }
+        ],
+        "bedroom": [
+          {
+            "src": "/audio/narration/valluvar/en/bedroom-0.mp3",
+            "duration": 2.17
+          },
+          {
+            "src": "/audio/narration/valluvar/en/bedroom-1.mp3",
+            "duration": 6.44
+          },
+          {
+            "src": "/audio/narration/valluvar/en/bedroom-2.mp3",
+            "duration": 4.84
+          },
+          {
+            "src": "/audio/narration/valluvar/en/bedroom-3.mp3",
+            "duration": 4.81
+          },
+          {
+            "src": "/audio/narration/valluvar/en/bedroom-4.mp3",
+            "duration": 3.61
+          }
+        ]
+      }
+    }
+  }
+}
